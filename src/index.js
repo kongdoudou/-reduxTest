@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import {render} from 'react-dom';
+import * as TYPE from './store/action-types';
+import {Provider} from 'react-redux';
+import Counter3 from './component/counter3';
+import {store} from './store';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+
+render(<Provider store={store}>
+    <Counter3/>
+</Provider>,document.querySelector("#root"));
